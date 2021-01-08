@@ -1,8 +1,8 @@
 class Odict < Formula
   desc "Command-line utility for the ODict dictionary format"
   homepage "https://odict.org"
-  url "https://github.com/odict/odict/archive/1.1.tar.gz"
-  sha256 "da9f1fc8e197bce675322ebce417e99a26a5ef1d123994349f6d6623c0cbefd0"
+  url "https://github.com/odict/odict/archive/1.2.tar.gz"
+  sha256 "2ff7603538d58250ff24fb72ecc4933ecef172f4485afb428bb6ff8963807575"
 
   depends_on "go" => :build
 
