@@ -2,13 +2,12 @@ class Odict < Formula
   desc "Command-line utility for the ODict dictionary format"
   homepage "https://odict.org"
   url "https://github.com/odict/odict/archive/1.3.tar.gz"
-  sha256 "6bc9b9fa56848d39bf6a69ca3d98249407e0bb59d2685728fbe513bee1e9852f"
-
+  sha256 "6a0735789b83f875983b385f0762b9e42a47c356cf4da6651d913f05737d85e4"
   depends_on "go" => :build
 
   def install
-    system "go", "install"
-    system "go", "build", "-o", "#{bin}/odict"
+    system "sh", "scripts/build.sh"
+    bin.install "bin/odict" => "odict"
   end
 
   test do
