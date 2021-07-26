@@ -2,7 +2,7 @@ class Odict < Formula
   desc "Command-line utility for the ODict dictionary format"
   homepage "https://odict.org"
   url "https://github.com/TheOpenDictionary/odict/archive/1.4.5.tar.gz"
-  sha256 "d278002e52c3c43076103e6de31cdd9e052260993267aaeb74f4716de9b86bfa"
+  sha256 "e540133567ed44d905934b40ed5f057763065e2b9d8294b049884969be615db0"
   depends_on "go" => :build
   depends_on "bazel" => :build 
 
