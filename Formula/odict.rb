@@ -1,14 +1,16 @@
 class Odict < Formula
   desc "Command-line utility for the ODict dictionary format"
   homepage "https://odict.org"
-  url "https://github.com/TheOpenDictionary/odict/archive/1.4.5.tar.gz"
-  sha256 "e540133567ed44d905934b40ed5f057763065e2b9d8294b049884969be615db0"
+  version "1.5.0"
+  url "https://github.com/TheOpenDictionary/odict/archive/refs/tags/1.5.0.tar.gz"
+  sha256 "c886d6e4bc7a94385548b3d72d1e69326303c2ae688b690085469b4685b2b78b"
   depends_on "go" => :build
-  depends_on "bazel" => :build 
+  depends_on "make" => :build
+  depends_on "flatbuffers" => :build
 
   def install
-    system "bazel", "build", "cli"
-    bin.install "bazel-bin/cli/odict" => "odict"
+    system "make", "cli-build"
+    bin.install "bin/odict" => "odict"
   end
 
   test do
