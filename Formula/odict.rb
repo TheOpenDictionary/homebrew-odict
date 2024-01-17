@@ -5,20 +5,20 @@
 class Odict < Formula
   desc "A lightning-fast dictionary compiler and toolchain"
   homepage "https://odict.org/"
-  version "1.21.0"
+  version "1.22.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/TheOpenDictionary/odict/releases/download/v1.21.0/odict_1.21.0_darwin_arm64.tar.gz"
-      sha256 "be51fe25fdd5fd2c69ea63ca7de2effb2b06992100f2a2cf17feec4b71677cb9"
+    if Hardware::CPU.intel?
+      url "https://github.com/TheOpenDictionary/odict/releases/download/v1.22.1/odict_1.22.1_darwin_amd64.tar.gz"
+      sha256 "8cd8fc666eb6ef5169d936d0e694e5d36642ea1c92bde848f11bd9f03d878585"
 
       def install
         bin.install "odict"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/TheOpenDictionary/odict/releases/download/v1.21.0/odict_1.21.0_darwin_amd64.tar.gz"
-      sha256 "d5102be369b9f7e1fed88e2c9bf5e8534ce04772ceee95f3d2005c9bde708e1b"
+    if Hardware::CPU.arm?
+      url "https://github.com/TheOpenDictionary/odict/releases/download/v1.22.1/odict_1.22.1_darwin_arm64.tar.gz"
+      sha256 "8240a8ab03fa86d773037db04c5289e273a28503cac436ed14e408c151831876"
 
       def install
         bin.install "odict"
@@ -28,16 +28,16 @@ class Odict < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TheOpenDictionary/odict/releases/download/v1.21.0/odict_1.21.0_linux_arm64.tar.gz"
-      sha256 "8bda6567e4320433ace3ccceb047d066409c106681e05d472c583bff4f7190c8"
+      url "https://github.com/TheOpenDictionary/odict/releases/download/v1.22.1/odict_1.22.1_linux_arm64.tar.gz"
+      sha256 "07e1dd37d2a8888075efab6fc961e4b31380240b15b7eba6b90cb3d7c22d94d6"
 
       def install
         bin.install "odict"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/TheOpenDictionary/odict/releases/download/v1.21.0/odict_1.21.0_linux_amd64.tar.gz"
-      sha256 "f3641aaf1d3be44ec5c3fb20583512a7ede008cade53aaf27adbfae570f1486c"
+      url "https://github.com/TheOpenDictionary/odict/releases/download/v1.22.1/odict_1.22.1_linux_amd64.tar.gz"
+      sha256 "358599ae0003b6aede8fac3c60a084d771abb15a8b4b88a56ac8bc2d98a1397b"
 
       def install
         bin.install "odict"
