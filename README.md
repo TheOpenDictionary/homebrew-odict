@@ -1,9 +1,9 @@
 # ODict for Homebrew
 
 ## How do I install these formulae?
-`brew install odict/odict/<formula>`
+`brew install TheOpenDictionary/odict/<formula>`
 
-Or `brew tap odict/odict` and then `brew install <formula>`.
+Or `brew tap TheOpenDictionary/odict` and then `brew install <formula>`.
 
 ## Documentation
 `brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
