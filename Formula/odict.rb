@@ -1,20 +1,20 @@
 class Odict < Formula
   desc "Lightning-fast dictionary file format and toolchain"
   homepage "https://odict.org"
-  version "3.2.1"
+  version "3.2.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/TheOpenDictionary/odict/releases/download/cli/v3.2.1/odict-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "bd5804846885c45b9ba4fee8f0e53abd2a34ea2af54409c40abbd59be423f041"
+      url "https://github.com/TheOpenDictionary/odict/releases/download/cli/v3.2.2/odict-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "ad8fcf29ba74b1ee04bff6f8c1bfb7de1b0ef55c1e42479090c4034ae7e6295a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/TheOpenDictionary/odict/releases/download/cli/v3.2.1/odict-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "50de9c6d5c286e6b866e57cc08976a5e282e249997955eb06c935756e508a4b6"
+      url "https://github.com/TheOpenDictionary/odict/releases/download/cli/v3.2.2/odict-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "6684665414cc113bb46d681f9098968e6f7ede50cdbf939882842813e6334455"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/TheOpenDictionary/odict/releases/download/cli/v3.2.1/odict-cli-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "4ef644bb5c2533b7c0c77927e7b57c64c3c32393c5920eb03ba1fa0985cabcb0"
+    url "https://github.com/TheOpenDictionary/odict/releases/download/cli/v3.2.2/odict-cli-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "e6c5f0329c03e9ff8e68b7982a92eff4a4b3ad863cc0b00f3960cac458d4c2c5"
   end
 
   BINARY_ALIASES = {
