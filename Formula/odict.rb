@@ -1,24 +1,32 @@
 class Odict < Formula
   desc "Lightning-fast dictionary file format and toolchain"
   homepage "https://odict.org"
-  version "3.2.2"
+  version "3.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/TheOpenDictionary/odict/releases/download/cli/v3.2.2/odict-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "ad8fcf29ba74b1ee04bff6f8c1bfb7de1b0ef55c1e42479090c4034ae7e6295a"
+      url "https://github.com/TheOpenDictionary/odict/releases/download/cli/v3.3.0/odict-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "75207d8091f777c0486fa9c3709e6e01809b0e45dda236844160e9ef68f5c8df"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/TheOpenDictionary/odict/releases/download/cli/v3.2.2/odict-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "6684665414cc113bb46d681f9098968e6f7ede50cdbf939882842813e6334455"
+      url "https://github.com/TheOpenDictionary/odict/releases/download/cli/v3.3.0/odict-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "8fede96eaaaf99adf2cb1c9d34ee78372fb786b68f9a258214729035a7810b54"
     end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/TheOpenDictionary/odict/releases/download/cli/v3.2.2/odict-cli-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "e6c5f0329c03e9ff8e68b7982a92eff4a4b3ad863cc0b00f3960cac458d4c2c5"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/TheOpenDictionary/odict/releases/download/cli/v3.3.0/odict-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "492abd10baf789efd3ea6480f9f36b651839667105c38a3f928b77ddabe408fd"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/TheOpenDictionary/odict/releases/download/cli/v3.3.0/odict-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "654ef25768a79784612c8c29ed06f77090b696dbb69b77435cfbd0f0c1cb99b2"
+    end
   end
 
   BINARY_ALIASES = {
     "aarch64-apple-darwin":              {},
+    "aarch64-pc-windows-gnu":            {},
+    "aarch64-unknown-linux-gnu":         {},
     "x86_64-apple-darwin":               {},
     "x86_64-pc-windows-gnu":             {},
     "x86_64-unknown-linux-gnu":          {},
@@ -44,6 +52,7 @@ class Odict < Formula
   def install
     bin.install "odict" if OS.mac? && Hardware::CPU.arm?
     bin.install "odict" if OS.mac? && Hardware::CPU.intel?
+    bin.install "odict" if OS.linux? && Hardware::CPU.arm?
     bin.install "odict" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
